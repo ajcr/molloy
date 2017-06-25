@@ -24,7 +24,7 @@ Suppose we are faced with the following problem:
 
 > There are 8 red marbles, 14 blue marbles and 11 yellow marbles. How many sets of 13 marbles can be chosen such that fewer than 5 red marbles are used, and at least 3 blue and at least 3 yellow marbles are used?
 
-This is a slightly tedious counting problem that can be solved in many different ways; normally we'd have to implement our chosen way in Python by ourself. Molloy, on the other hand, lets us get rid of this chore.
+This is a slightly tedious counting problem that can be solved in many different ways; normally we'd have to implement our chosen way in Python by ourself. Molloy, on the other hand, lets us get rid of this chore:
 
 ``` python
 >>> from molloy import CounterM
@@ -39,9 +39,9 @@ Now we can use the `count_sets` method to solve the problem:
 ```
 So there are 30 ways to choose a set meeting the constraints.
 
-Notice that the constraint is given as a string. Molloy parses the string as a Python expression and translates it into a computation to solve the problem. This allows for a very versatile and concise way of translating a problem into a format that can be understood by the program.
+Notice that the constraint is given as a string. Molloy parses the string as a Python expression and translates it into a computation to solve the problem. This allows for a versatile and concise way of giving the problem to the program.
 
-Let's try a slightly more ambitious exercise (cf. Section 5 [here](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-fall-2005/readings/ln11.pdf).
+Let's try a slightly more ambitious exercise (cf. Section 5 [here](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-fall-2005/readings/ln11.pdf)):
 
 > We've made a huge fruit salad. How many ways can we serve a bowl of 6 pieces of fruit such that:
 >  - the number of apples is even
