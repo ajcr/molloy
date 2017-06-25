@@ -32,12 +32,12 @@ This is a slightly tedious counting problem that can be solved in many different
 ```
 We've just defined our starting collection of marbles by passing a dictionary of counts. This should look very familiar if you've ever used Python's `collections.Counter` class.
 
-Now we can use the `count_sets` method to solve the problem:
+Now we can use the `count_sets()` method to solve the problem:
 ``` python
 >>> marbles.count_sets(13, 'red < 5 and blue >= 3 and yellow >= 3')
 30
 ```
-So there are 30 ways to choose a set meeting the constraints.
+So there are 30 ways to choose a set of 13 marbles meeting the constraints.
 
 Notice that the constraint is given as a string. Molloy parses the string as a Python expression and translates it into a computation to solve the problem. This allows for a versatile and concise way of giving the problem to the program.
 
