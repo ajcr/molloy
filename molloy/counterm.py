@@ -1,6 +1,6 @@
 from collections import Counter
 
-from constraints import SetConstraintHandler
+from .constraints import SetConstraintHandler
 
 
 class CounterM(Counter):
