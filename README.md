@@ -14,7 +14,7 @@ The only external dependency is [NumPy](http://www.numpy.org/). This dependency 
 
 ### Installing
 
-(Use pip.)
+Clone the repo (e.g. `git clone https://github.com/ajcr/molloy.git`), change to the directory (e.g. `cd molloy`) and then `python setup.py install` should do the trick.
 
 ## Examples
 
