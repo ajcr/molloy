@@ -40,17 +40,22 @@ class BaseConstraintHandler(object):
 
     def _modify_polynomials_using_contraints(self):
         expr = self.tree.body[0].value
-        if not isinstance(expr, (ast.BoolOp, ast.Compare)):
+
+        if isinstance(expr, ast.Compare):
+            self._handle_compare_op(expr)
+
+        elif isinstance(expr, ast.BoolOp):
+            if isinstance(expr.op, ast.Or):
+                raise NotImplementedError('Disjunction is not yet supported')
+            for operation in expr.values:
+                if isinstance(operation, ast.Compare):
+                    self._handle_compare_op(operation)
+                else:
+                    raise ConstraintError('Constraint not understood')
+
+        else:
             raise ConstraintError('Contraint string must be a boolean expression'
                     ' or a single boolean comparison')
-        if isinstance(expr.op, ast.Or):
-            raise NotImplementedError('Disjunction is not yet supported')
-
-        for operation in expr.values:
-            if isinstance(operation, ast.Compare):
-                self._handle_compare_op(operation)
-            else:
-                raise ConstraintError('Constraint not understood')
 
     def _handle_compare_op(self, operation):
         """Process the compare operations in the AST.
