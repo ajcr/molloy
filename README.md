@@ -10,7 +10,7 @@ It provides an extension to Python's `Counter` class as the foundation for solvi
 
 Molloy is written to be used with Python 3.
 
-The only external dependency is [NumPy](http://www.numpy.org/). This dependency may go away in future, or another dependency could be added (e.g. SymPy) as more features are added and I get better at combinatorics.
+The only external dependency is [NumPy](http://www.numpy.org/) (and [PyTest](https://docs.pytest.org/en/latest/) for testing). The dependency on NumPy *might* go away in future, or another dependency could be substituted (e.g. SymPy) as more features are added and I get better at figuring out how to solve combinatorics problems.
 
 ### Installing
 
@@ -76,4 +76,5 @@ Coming later.
 Currently Molloy is in the 'proof of concept' stage. Internally, the counts are computed by creating polynomials for each item, multiplying these polynomials and extracting the appropriate coefficient. There are more advanced and efficient ways to compute solutions to these and other problems and it is my aim to implement alternative approaches as the library grows and I learn more about combinatorial techniques in general.
 
 I named the project 'Molloy' after remembering the [sucking-stones sequence](http://www.samuel-beckett.net/molloy1.html) from that novel.
+
 

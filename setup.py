@@ -7,5 +7,5 @@ setup(name='molloy',
       author='Alex Riley',
       license='MIT',
       packages=['molloy'],
-      install_requires=['numpy'],
+      install_requires=['numpy','pytest'],
       zip_safe=False)
