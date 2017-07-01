@@ -146,7 +146,13 @@ class SetConstraintHandler(BaseConstraintHandler):
 
     @property
     def solution(self):
-        return self.power_series[self.max_degree]
+        try:
+            return self.power_series[self.max_degree]
+        except IndexError:
+            # Only reached when we have a collection
+            # and do not introduce any new items in
+            # the constraints
+            return 0
 
     @staticmethod
     def _init_polynomials_from_items(items):
