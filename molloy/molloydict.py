@@ -1,6 +1,6 @@
 from collections import Counter
 
-from .constraints import SetConstraintHandler
+from .setconstraints import SetConstraintHandler
 
 
 class Molloy(Counter):
