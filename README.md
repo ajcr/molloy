@@ -27,8 +27,8 @@ Suppose we are faced with the following problem:
 This is a slightly tedious counting problem that can be solved in many different ways; normally we'd have to implement our chosen way in Python by ourself. Molloy, on the other hand, lets us get rid of this chore:
 
 ``` python
->>> from molloy import CounterM
->>> marbles = CounterM({'red': 8, 'blue': 14, 'yellow': 11})
+>>> from molloy import Molloy
+>>> marbles = Molloy({'red': 8, 'blue': 14, 'yellow': 11})
 ```
 We've just defined our starting collection of marbles by passing a dictionary of counts. This should look very familiar if you've ever used Python's `collections.Counter` class.
 
@@ -53,9 +53,9 @@ Let's try a slightly more ambitious exercise (cf. Section 5 [here](https://ocw.m
 
 ``` python
 >>> constraints = 'apple % 2 == 0 and orange <= 4 and pear in (0, 1) and banana % 5 == 0'
->>> CounterM().count_sets(6, constraints)
+>>> Molloy().count_sets(6, constraints)
 7
->>> CounterM().count_sets(100, constraints)
+>>> Molloy().count_sets(100, constraints)
 101
 ```
 As well as using inequalities, we can express 'is a multiple of' by using Python's modulo `%` operator. We can also specify the values an item can take using a collection (e.g. `'pear in (0, 1)'`).

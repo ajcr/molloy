@@ -3,14 +3,15 @@ from collections import Counter
 from .constraints import SetConstraintHandler
 
 
-class CounterM(Counter):
+class Molloy(Counter):
     """A collection of objects with which to count
     numbers of possible sets, sequences or partitions.
 
     As with the collections.Counter class, the input
     can be any iterable, or a dictionary of existing
-    counts. Unlike the parent class, the default
-    is to create an empty CounterM dict object.
+    counts. Unlike the parent class, the default when
+    nothing is passed in is to create an empty dict-like
+    object.
 
     Note that all counts must be positive integers.
     """

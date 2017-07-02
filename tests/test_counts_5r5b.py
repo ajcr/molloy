@@ -1,8 +1,8 @@
 import pytest
 
-from molloy import CounterM
+from molloy import Molloy
 
-collection_5r5b = CounterM({'red': 5, 'blue': 5})
+collection_5r5b = Molloy({'red': 5, 'blue': 5})
 
 # 5 red, 5 blue, constrain red (==)
 @pytest.mark.parametrize('size,red,expected', [
@@ -120,7 +120,6 @@ def test_5r5b_constrain_red_modulo_lt(size, mod, rem, expected):
     ( 5, 1, 1, 0),
 ])
 def test_5r5b_constrain_red_eq_blue_eq(size, red, blue, expected):
-    collection = CounterM({'red': 5, 'blue': 5})
     constraints = 'red == {} and blue == {}'.format(red, blue)
     assert collection_5r5b.count_sets(size, constraints) == expected
 
@@ -135,7 +134,6 @@ def test_5r5b_constrain_red_eq_blue_eq(size, red, blue, expected):
     ( 2, 2, 0, 0, 1),
 ])
 def test_5r5b_constrain_red_eq_blue_eq_plus_yellow_eq(size, red, blue, yellow, expected):
-    collection = CounterM({'red': 5, 'blue': 5})
     constraints = 'red == {} and blue == {} and yellow == {}'.format(red, blue, yellow)
     assert collection_5r5b.count_sets(size, constraints) == expected
 
