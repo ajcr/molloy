@@ -10,7 +10,7 @@ It provides an extension to Python's `Counter` class as the foundation for solvi
 
 Molloy is written to be used with Python 3.
 
-The only external dependency is [NumPy](http://www.numpy.org/) (and [PyTest](https://docs.pytest.org/en/latest/) for testing). The dependency on NumPy *might* go away in future, or another dependency could be substituted (e.g. SymPy) as more features are added and I get better at figuring out how to solve combinatorics problems.
+The only external dependency is [NumPy](http://www.numpy.org/) (and [PyTest](https://docs.pytest.org/en/latest/) for testing). The dependency on NumPy *might* go away in future, or another dependency could be substituted (e.g. SymPy) as more features are added and I get better at figuring out how to solve various combinatorial problems.
 
 ### Installing
 
@@ -24,7 +24,7 @@ Suppose we are faced with the following problem:
 
 > There are 8 red marbles, 14 blue marbles and 11 yellow marbles. How many sets of 13 marbles can be chosen such that fewer than 5 red marbles are used, and at least 3 blue and at least 3 yellow marbles are used?
 
-This is a slightly tedious counting problem that can be solved in many different ways; normally we'd have to implement our chosen way in Python by ourself. Molloy, on the other hand, lets us get rid of this chore:
+This is a slightly tedious counting problem that can be solved in many different ways; normally we'd have to implement our chosen way in Python by ourself. Molloy rids us of this chore:
 
 ``` python
 >>> from molloy import Molloy
