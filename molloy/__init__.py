@@ -1,1 +1,1 @@
-from .molloydict import Molloy
+from .molloycounter import Molloy
