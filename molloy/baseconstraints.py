@@ -86,12 +86,15 @@ class BaseConstraintHandler(object):
             try:
                 # compare is of form 'item % mod == rem'
                 # note: rem must be a number, not a list/tuple/set
-                assert isinstance(operation.left.op, ast.Mod)
+                if not isinstance(operation.left.op, ast.Mod):
+                    raise TypeError()
                 item = operation.left.left.id
                 mod = operation.left.right.n
                 op = operation.ops[0]
                 rem = operation.comparators[0].n
-            except (AttributeError, TypeError, AssertionError):
+            except (AttributeError, TypeError):
+                # we expected a modulo compare but did not find
+                # one so we do not understand this constraint
                 raise ConstraintError('Constraint not understood')
             else:
                 return self._constraint_modulo(item, mod, op, rem)
