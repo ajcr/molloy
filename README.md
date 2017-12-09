@@ -4,19 +4,21 @@ Molloy computes the number of possible collections of items that satisfy one or 
 
 How many choices of 5 items from :cake::pizza::doughnut::pizza::green_apple::cake::green_apple: contain at least one pizza?
 
+``` python
 >>> food = Molloy(['cake', 'pizza', 'donut', 'pizza', 'apple', 'cake', 'apple'])
 >>> foood.count_sets(5, 'pizza >= 1')
 8
+```
 
 The answer is 8.
 
-The module provides an extension to Python's `Counter` class as the foundation for solving these combinatorial problems, and allows a simple way to express the constraints that a collection should meet.
+This module provides an extension to Python's `Counter` class as the foundation for solving these combinatorial problems, and allows a simple way to express the constraints that a collection should meet.
 
 ## Getting started
 
 ### Prerequisites
 
-Molloy is written to be used with Python 3.
+Molloy is written to be used with Python 3, but *may* work with Python 2.
 
 The only external dependency is [NumPy](http://www.numpy.org/) (and [PyTest](https://docs.pytest.org/en/latest/) for testing). The dependency on NumPy *might* go away in future, or another dependency could be substituted (e.g. SymPy) as more features are added and I get better at figuring out how to solve various combinatorial problems.
 
