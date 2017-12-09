@@ -16,7 +16,7 @@ collection_5r5b = Molloy({'red': 5, 'blue': 5})
 ])
 def test_5r5b_constrain_red_eq(size, red, expected):
     constraints = 'red == {}'.format(red)
-    assert collection_5r5b.count_sets(size, constraints) == expected
+    assert collection_5r5b.count_collections(size, constraints) == expected
 
 # 5 red, 5 blue, constrain red (!=)
 @pytest.mark.parametrize('size,red,expected', [
@@ -27,7 +27,7 @@ def test_5r5b_constrain_red_eq(size, red, expected):
 ])
 def test_5r5b_constrain_red_neq(size, red, expected):
     constraints = 'red != {}'.format(red)
-    assert collection_5r5b.count_sets(size, constraints) == expected
+    assert collection_5r5b.count_collections(size, constraints) == expected
 
 # 5 red, 5 blue, constrain red (<)
 @pytest.mark.parametrize('size,red,expected', [
@@ -40,7 +40,7 @@ def test_5r5b_constrain_red_neq(size, red, expected):
 ])
 def test_5r5b_constrain_red_lt(size, red, expected):
     constraints = 'red < {}'.format(red)
-    assert collection_5r5b.count_sets(size, constraints) == expected
+    assert collection_5r5b.count_collections(size, constraints) == expected
 
 # 5 red, 5 blue, constrain red (>=)
 @pytest.mark.parametrize('size,red,expected', [
@@ -54,7 +54,7 @@ def test_5r5b_constrain_red_lt(size, red, expected):
 ])
 def test_5r5b_constrain_red_ge(size, red, expected):
     constraints = 'red >= {}'.format(red)
-    assert collection_5r5b.count_sets(size, constraints) == expected
+    assert collection_5r5b.count_collections(size, constraints) == expected
 
 # 5 red, 5 blue, constrain red (in)
 @pytest.mark.parametrize('size,red,expected', [
@@ -70,7 +70,7 @@ def test_5r5b_constrain_red_ge(size, red, expected):
 ])
 def test_5r5b_constrain_red_in(size, red, expected):
     constraints = 'red in {}'.format(red)
-    assert collection_5r5b.count_sets(size, constraints) == expected
+    assert collection_5r5b.count_collections(size, constraints) == expected
 
 # 5 red, 5 blue, constrain red (not in)
 @pytest.mark.parametrize('size,red,expected', [
@@ -82,7 +82,7 @@ def test_5r5b_constrain_red_in(size, red, expected):
 ])
 def test_5r5b_constrain_red_not_in(size, red, expected):
     constraints = 'red not in {}'.format(red)
-    assert collection_5r5b.count_sets(size, constraints) == expected
+    assert collection_5r5b.count_collections(size, constraints) == expected
 
 # 5 red, 5 blue, constrain red (%, ==)
 @pytest.mark.parametrize('size,mod,rem,expected', [
@@ -94,7 +94,7 @@ def test_5r5b_constrain_red_not_in(size, red, expected):
 ])
 def test_5r5b_constrain_red_modulo_eq(size, mod, rem, expected):
     constraints = 'red % {} == {}'.format(mod, rem)
-    assert collection_5r5b.count_sets(size, constraints) == expected
+    assert collection_5r5b.count_collections(size, constraints) == expected
 
 # 5 red, 5 blue, constrain red (%, <)
 @pytest.mark.parametrize('size,mod,rem,expected', [
@@ -104,7 +104,7 @@ def test_5r5b_constrain_red_modulo_eq(size, mod, rem, expected):
 ])
 def test_5r5b_constrain_red_modulo_lt(size, mod, rem, expected):
     constraints = 'red % {} < {}'.format(mod, rem)
-    assert collection_5r5b.count_sets(size, constraints) == expected
+    assert collection_5r5b.count_collections(size, constraints) == expected
 
 # ------------------------------------------------
 
@@ -121,7 +121,7 @@ def test_5r5b_constrain_red_modulo_lt(size, mod, rem, expected):
 ])
 def test_5r5b_constrain_red_eq_blue_eq(size, red, blue, expected):
     constraints = 'red == {} and blue == {}'.format(red, blue)
-    assert collection_5r5b.count_sets(size, constraints) == expected
+    assert collection_5r5b.count_collections(size, constraints) == expected
 
 # 5 red, 5 blue, ? yellow, constrain red (==), blue (==), yellow (==) 
 @pytest.mark.parametrize('size,red,blue,yellow,expected', [
@@ -135,5 +135,5 @@ def test_5r5b_constrain_red_eq_blue_eq(size, red, blue, expected):
 ])
 def test_5r5b_constrain_red_eq_blue_eq_plus_yellow_eq(size, red, blue, yellow, expected):
     constraints = 'red == {} and blue == {} and yellow == {}'.format(red, blue, yellow)
-    assert collection_5r5b.count_sets(size, constraints) == expected
+    assert collection_5r5b.count_collections(size, constraints) == expected
 

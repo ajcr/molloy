@@ -2,11 +2,11 @@
 
 Molloy computes the number of possible collections of items that satisfy one or more constraints.
 
-How many choices of 5 items from :cake::pizza::doughnut::pizza::green_apple::cake::green_apple: contain at least one pizza?
+How many choices of 5 items from :cake::pizza::doughnut::pizza::green_apple::cake::green_apple: contain at least one slice of pizza?
 
 ``` python
 >>> food = Molloy(['cake', 'pizza', 'donut', 'pizza', 'apple', 'cake', 'apple'])
->>> foood.count_sets(5, 'pizza >= 1')
+>>> foood.count_collections(5, 'pizza >= 1')
 8
 ```
 
@@ -28,11 +28,11 @@ Clone the repo (e.g. `git clone https://github.com/ajcr/molloy.git`), change to 
 
 ## Examples
 
-### Counting sets
+### Counting collections
 
 Suppose we are faced with the following problem:
 
-> There are 8 red marbles, 14 blue marbles and 11 yellow marbles. How many sets of 13 marbles can be chosen such that fewer than 5 red marbles are used, and at least 3 blue and at least 3 yellow marbles are used?
+> There are 8 red marbles, 14 blue marbles and 11 yellow marbles. How many collections of 13 marbles can be chosen such that fewer than 5 red marbles are used, and at least 3 blue and at least 3 yellow marbles are used?
 
 This is a slightly tedious counting problem that can be solved in many different ways; normally we'd have to implement our chosen way in Python by ourself. Molloy rids us of this chore:
 
@@ -42,12 +42,12 @@ This is a slightly tedious counting problem that can be solved in many different
 ```
 We've just defined our starting collection of marbles by passing a dictionary of counts. This should look very familiar if you've ever used Python's `collections.Counter` class.
 
-Now we can use the `count_sets()` method to solve the problem:
+Now we can use the `count_collections()` method to solve the problem:
 ``` python
->>> marbles.count_sets(13, 'red < 5 and blue >= 3 and yellow >= 3')
+>>> marbles.count_collections(13, 'red < 5 and blue >= 3 and yellow >= 3')
 30
 ```
-So there are 30 ways to choose a set of 13 marbles meeting the constraints.
+So there are 30 ways to choose a collection of 13 marbles meeting the constraints.
 
 Notice that the constraint is given as a string. Molloy parses the string as a Python expression and translates it into a computation to solve the problem. This allows for a versatile and concise way of giving the problem to the program.
 
@@ -63,9 +63,9 @@ Let's try a slightly more ambitious exercise (cf. Section 5 [here](https://ocw.m
 
 ``` python
 >>> constraints = 'apple % 2 == 0 and orange <= 4 and pear in (0, 1) and banana % 5 == 0'
->>> Molloy().count_sets(6, constraints)
+>>> Molloy().count_collections(6, constraints)
 7
->>> Molloy().count_sets(100, constraints)
+>>> Molloy().count_collections(100, constraints)
 101
 ```
 As well as using inequalities, we can express 'is a multiple of' by using Python's modulo `%` operator. We can also specify the values an item can take using a collection (e.g. `'pear in (0, 1)'`).

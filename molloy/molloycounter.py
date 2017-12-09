@@ -1,11 +1,12 @@
 from collections import Counter
 
-from .setconstraints import SetConstraintHandler
+from .collectionconstraints import CollectionConstraintHandler
 
 
 class Molloy(Counter):
     """A collection of objects with which to count
-    numbers of possible sets, sequences or partitions.
+    numbers of possible collections, sequences or
+    partitions.
 
     As with the collections.Counter class, the input
     can be any iterable, or a dictionary of existing
@@ -24,14 +25,14 @@ class Molloy(Counter):
     def _is_positive_integer(n):
         return n > 0 and isinstance(n, int)
 
-    def count_sets(self, size=None, constraints=None):
-        """ Count the number of sets of a particular
+    def count_collections(self, size=None, constraints=None):
+        """ Count the number of collections of a particular
         size, optionally meeting any number of constraints
-        on the items that make up that set.
+        on the items that make up that collection.
         """
         if size is None:
             size = self.total
-        x = SetConstraintHandler(constraints or '', self, size)
+        x = CollectionConstraintHandler(constraints or '', self, size)
         return x.solution
 
     def count_sequences(size):
