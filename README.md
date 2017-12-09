@@ -2,7 +2,15 @@
 
 Molloy computes the number of possible collections of items that satisfy one or more constraints.
 
-It provides an extension to Python's `Counter` class as the foundation for solving these combinatorial problems, and allows a simple way to express the constraints that a collection should meet.
+How many choices of 5 items from :cake::pizza::doughnut::pizza::green_apple::cake::green_apple: contain at least one pizza?
+
+>>> food = Molloy(['cake', 'pizza', 'donut', 'pizza', 'apple', 'cake', 'apple'])
+>>> foood.count_sets(5, 'pizza >= 1')
+8
+
+The answer is 8.
+
+The module provides an extension to Python's `Counter` class as the foundation for solving these combinatorial problems, and allows a simple way to express the constraints that a collection should meet.
 
 ## Getting started
 
