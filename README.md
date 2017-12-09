@@ -62,7 +62,10 @@ Let's try a slightly more ambitious exercise (cf. Section 5 [here](https://ocw.m
 > How many ways for 100 pieces of fruit given these requirements?
 
 ``` python
->>> constraints = 'apple % 2 == 0 and orange <= 4 and pear in (0, 1) and banana % 5 == 0'
+>>> constraints = """apple % 2 == 0 and 
+                     orange <= 4    and
+                     pear in (0, 1) and 
+                     banana % 5 == 0"""
 >>> Molloy().count_collections(6, constraints)
 7
 >>> Molloy().count_collections(100, constraints)

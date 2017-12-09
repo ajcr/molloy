@@ -27,11 +27,15 @@ class Molloy(Counter):
 
     def count_collections(self, size=None, constraints=None):
         """ Count the number of collections of a particular
-        size, optionally meeting any number of constraints
-        on the items that make up that collection.
+        size.
+
+        The collection can optionally meet any number of
+        constraints on the items that it contains.
         """
         if size is None:
             size = self.total
+        if constraints is not None:
+            constraints = constraints.replace('\n', ' ')
         x = CollectionConstraintHandler(constraints or '', self, size)
         return x.solution
 
