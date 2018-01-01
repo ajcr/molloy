@@ -54,12 +54,12 @@ Notice that the constraint is given as a string. Molloy parses the string as a P
 Let's try a slightly more ambitious exercise (cf. Section 5 [here](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-fall-2005/readings/ln11.pdf)):
 
 > We've made a huge fruit salad. How many ways can we serve a bowl of 6 pieces of fruit such that:
->  - the number of apples is even
->  - the number of oranges is at most 4
->  - the number of pears in at most 1
->  - the number of bananas must be a multiple of 5
+>  - the number of apples is even, *and*
+>  - the number of oranges is at most 4, *and*
+>  - the number of pears in at most 1, *and*
+>  - the number of bananas must be a multiple of 5?
 >
-> How many ways for 100 pieces of fruit given these requirements?
+> ...And how many ways for 100 pieces of fruit given the same requirements?
 
 ``` python
 >>> constraints = """apple % 2 == 0 and 
