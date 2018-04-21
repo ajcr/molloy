@@ -91,6 +91,6 @@ Coming later.
 
 Currently Molloy is in the 'proof of concept' stage. Internally, the counts are computed by creating polynomials for each item, multiplying these polynomials and extracting the appropriate coefficient. There are more advanced and efficient ways to compute solutions to these and other problems and it is my aim to implement alternative approaches as the library grows and I learn more about combinatorial techniques in general.
 
-I named the project 'Molloy' after remembering the [sucking-stones sequence](http://www.samuel-beckett.net/molloy1.html) from that novel.
+I named the project 'Molloy' after remembering the [sucking-stones sequence](http://www4.ncsu.edu/~n51ls801/sstones.html) from that novel.
 
 
