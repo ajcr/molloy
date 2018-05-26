@@ -7,7 +7,8 @@ from .constraintutils import *
 
 
 class BaseConstraintHandler(object):
-    """This class is the parent class for more specific
+    """
+    This class is the parent class for more specific
     constraint handlers that define the methods to build
     polynomials depending on the type of generating
     function that is needed.
@@ -39,7 +40,8 @@ class BaseConstraintHandler(object):
                     ' or a single boolean comparison')
 
     def _handle_compare_op(self, operation):
-        """Process the compare operations in the AST.
+        """
+        Process the compare operations in the AST.
         Currently supports comparisons using the operators
         ==, !=, <, <=, >, >= that take either of the forms:
 
@@ -112,4 +114,3 @@ class BaseConstraintHandler(object):
 
         else:
             raise ConstraintError('Constraint not understood')
-

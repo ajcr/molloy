@@ -7,7 +7,8 @@ from .constraintutils import ConstraintError, ast_op_to_operator
 
 
 class CollectionConstraintHandler(BaseConstraintHandler):
-    """Parse string specifying contraints build
+    """
+    Parse string specifying contraints build
     the AST and then dispatch to functions to
     make and modify a polynomial for each item.
     """

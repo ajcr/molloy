@@ -1,6 +1,8 @@
-""" Helper constainers and exceptions that are
+"""
+Helper constainers and exceptions that are
 used by the Constraint classes defined in other
 files in this directory.
+
 """
 import ast
 import operator

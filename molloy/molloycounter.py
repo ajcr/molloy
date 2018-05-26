@@ -4,7 +4,8 @@ from .collectionconstraints import CollectionConstraintHandler
 
 
 class Molloy(Counter):
-    """A collection of objects with which to count
+    """
+    A collection of objects with which to count
     numbers of possible collections, sequences or
     partitions.
 
@@ -26,7 +27,8 @@ class Molloy(Counter):
         return n > 0 and isinstance(n, int)
 
     def count_collections(self, size=None, constraints=None):
-        """ Count the number of collections of a particular
+        """
+        Count the number of collections of a particular
         size.
 
         The collection can optionally meet any number of
@@ -34,22 +36,26 @@ class Molloy(Counter):
         """
         if size is None:
             size = self.total
+
         if constraints is not None:
             constraints = constraints.replace('\n', ' ')
+
         x = CollectionConstraintHandler(constraints or '', self, size)
+
         return x.solution
 
-    def count_sequences(size):
-        """ Count the number of sequences of a particular
+    def count_sequences(self, size):
+        """
+        Count the number of sequences of a particular
         size, optionally meeting any number of constraints
         on the items that make up that sequence.
         """
         raise NotImplementedError
 
-    def count_partitions(size):
-        """ Count the number of partitions of a particular
+    def count_partitions(self, size):
+        """
+        Count the number of partitions of a particular
         size, optionally meeting any number of constraints
         on the items that make up the partitions.
         """
         raise NotImplementedError
-
