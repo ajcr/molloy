@@ -1,3 +1,5 @@
+**Note**: this project is not active, see its successor here: https://github.com/ajcr/ccc
+
 # Molloy
 
 Molloy computes the number of possible collections of items that satisfy one or more constraints.
